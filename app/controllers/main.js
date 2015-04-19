@@ -12,7 +12,7 @@ exports.index = function (req, res) {
 exports.capture = function(req, res) {
 	cam.capture(function(err, filename, timestamp) {
 		if(!err) {
-      res.json({success: true, filename: filename});
+      res.json({success: true, filename: filename, ts: timestamp});
     } else {
       res.json({success: false, error: err});
     }
