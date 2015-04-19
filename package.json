@@ -28,8 +28,5 @@
     "view-helpers": "latest",
     "raspicam": "latest"
   },
-  "devDependencies": {
-    "nodemon": "latest"
-  },
   "keywords": []
 }
