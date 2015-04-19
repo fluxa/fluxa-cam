@@ -25,11 +25,13 @@
     "moment": "latest",
     "moment-timezone": "latest",
     "morgan": "latest",
-    "nodemon": "latest",
     "serve-favicon": "latest",
     "underscore": "latest",
     "view-helpers": "latest",
     "raspicam": "latest"
+  },
+  "devDependencies": {
+    "nodemon": "latest"
   },
   "keywords": []
 }
