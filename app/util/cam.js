@@ -16,7 +16,8 @@ function init() {
 		h: 768,
 		q: 80,
 		t: 1,
-		e: 'jpg'
+		e: 'jpg',
+    vf: true
 	});
 }
 
