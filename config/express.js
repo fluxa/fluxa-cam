@@ -7,7 +7,6 @@ var express = require('express');
 var helpers = require('view-helpers');
 var lessMiddleware = require('less-middleware');
 var pkg = require('../package');
-var flash = require('connect-flash');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var path = require('path');
