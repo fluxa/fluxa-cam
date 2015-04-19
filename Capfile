@@ -17,4 +17,4 @@ set :deploy_to, "/home/pi/fluxa-cam"
 set :app_environment, "NODE_PATH=./app/controllers PORT=7777"
 
 
-after "deploy", :config_server
+# after "deploy", :config_server
