@@ -7,7 +7,7 @@ function init() {
 		cam.stop();
 		cam = null;
 	}
-	var path = common.util.format('%s/temp/capture.jpg',common.rootPath);
+	var path = common.util.format('%s/public/img/temp/capture.jpg',common.rootPath);
 	console.log('initializing cam with output path: %s',path);
 	cam = new raspicam({
 		mode: 'photo',

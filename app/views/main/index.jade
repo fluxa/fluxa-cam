@@ -16,7 +16,9 @@ block scripts
 			// Setup buttons
 			$(page).find('#btCapture').on('click', function(){
 				$.post('/capture', {}, function(data) {
-					console.log(data);
+					if(data && data.success) {
+						$('.cam-img').attr('src','img/temp/'+data.filename);
+					}
 				})
 			});	
 		});
