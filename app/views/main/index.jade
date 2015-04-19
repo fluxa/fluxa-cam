@@ -1,0 +1,31 @@
+extends ../layouts/default
+
+block pages
+	.app-page(data-page='home')
+		//- .app-topbar
+		//- 	.app-title fluxa-cam
+		.app-content
+			img(src='img/cam.gif').cam-img
+			.app-section
+				.app-button.green#btCapture Capture
+
+block scripts
+	script.
+		
+		App.controller('home', function (page) {
+			// Setup buttons
+			$(page).find('#btCapture').on('click', function(){
+				
+			});	
+		});
+		
+		try {
+			App.restore();
+		} catch (err) {
+			App.load('home');
+		}
+
+
+		(function(){
+			
+		})();
