@@ -17,7 +17,7 @@ block scripts
 		App.controller('home', function (page) {
 			// Setup buttons
 			$(page).find('#btCapture').on('click', function(){
-				spinner.spin();
+				spinnerSpin();
 				$.post('/capture', {}, function(data) {
 					var imgPath = 'img/temp/cam.gif';
 					if(data && data.success) {
@@ -25,7 +25,7 @@ block scripts
 					}
 					$('.cam-img')
 					.on('load', function(){
-						spinner.stop();
+						spinnerStop();
 					})
 					.attr('src',imgPath);
 				})
@@ -37,9 +37,8 @@ block scripts
 		} catch (err) {
 			App.load('home');
 		}
-
-
-		(function(){
+		
+		function spinnerSpin() {
 			var opts = {
 				lines: 9, // The number of lines to draw
 				length: 40, // The length of each line
@@ -60,5 +59,14 @@ block scripts
 			};
 			var target = $('#image')[0];
 			spinner = new Spinner(opts).spin(target);
+		}
+		
+		function spinnerStop() {
 			spinner.stop();
+			spinner = null;
+		}
+
+		(function(){
+			
+			
 		})();
