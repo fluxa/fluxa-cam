@@ -29,6 +29,7 @@ exports.capture = function(callback) {
       console.log('err => %s | t => %s | f => %s',err,timestamp,filename);
       cam.removeListener('read', onRead);
       if(!err) {
+        filename = filename.replace('~','');
         callback(null, filename, timestamp);
       }
     }
