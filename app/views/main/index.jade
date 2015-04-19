@@ -18,14 +18,16 @@ block scripts
 			// Setup buttons
 			$(page).find('#btCapture').on('click', function(){
 				spinnerSpin();
+				console.log('capture');
 				$.post('/capture', {}, function(data) {
 					var imgPath = 'img/temp/cam.gif';
 					if(data && data.success) {
 						imgPath = 'img/temp/'+data.filename+'?ts='+data.ts;
 					}
+					console.log('loading img => %s',imgPath);
 					$('.cam-img')
 					.on('load', function(){
-						spinnerStop();
+						spinner.stop();
 					})
 					.attr('src',imgPath);
 				})
@@ -38,7 +40,7 @@ block scripts
 			App.load('home');
 		}
 		
-		function spinnerSpin() {
+		function spinnerSeup() {
 			var opts = {
 				lines: 9, // The number of lines to draw
 				length: 40, // The length of each line
@@ -57,16 +59,14 @@ block scripts
 				top: '50%', // Top position relative to parent
 				left: '50%' // Left position relative to parent
 			};
-			var target = $('#image')[0];
-			spinner = new Spinner(opts).spin(target);
+			spinner = new Spinner(opts);
 		}
 		
-		function spinnerStop() {
-			spinner.stop();
-			spinner = null;
+		function spinnerSpin() {
+			var target = $('#image')[0];
+			spinner.spin(target);
 		}
 
 		(function(){
-			
-			
+			spinnerSetup();
 		})();
