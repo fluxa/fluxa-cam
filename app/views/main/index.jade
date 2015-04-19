@@ -21,7 +21,7 @@ block scripts
 				$.post('/capture', {}, function(data) {
 					var imgPath = 'img/temp/cam.gif';
 					if(data && data.success) {
-						imgPath = 'img/temp/'+data.filename;
+						imgPath = 'img/temp/'+data.filename?timestamp=data.timestamp;
 					}
 					$('.cam-img')
 					.on('load', function(){
