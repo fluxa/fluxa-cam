@@ -15,7 +15,7 @@ block scripts
 		App.controller('home', function (page) {
 			// Setup buttons
 			$(page).find('#btCapture').on('click', function(){
-				$.post('/capture', function(data) {
+				$.post('/capture', {}, function(data) {
 					console.log(data);
 				})
 			});	
