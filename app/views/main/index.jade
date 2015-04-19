@@ -20,7 +20,7 @@ block scripts
 				spinnerSpin();
 				console.log('capture');
 				$.post('/capture', {}, function(data) {
-					var imgPath = 'img/temp/cam.gif';
+					var imgPath = 'img/cam.gif';
 					if(data && data.success) {
 						imgPath = 'img/temp/'+data.filename+'?ts='+data.ts;
 					}
@@ -31,7 +31,7 @@ block scripts
 					})
 					.on('error', function(err) {
 						spinner.stop();
-						$('.cam-img').attr('src','img/temp/cam.gif');
+						$('.cam-img').attr('src','img/cam.gif');
 					})
 					.attr('src',imgPath);
 				})
