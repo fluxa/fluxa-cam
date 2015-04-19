@@ -29,6 +29,10 @@ block scripts
 					.on('load', function(){
 						spinner.stop();
 					})
+					.on('error', function(err) {
+						spinner.stop();
+						$('.cam-img').attr('src','img/temp/cam.gif');
+					})
 					.attr('src',imgPath);
 				})
 			});	
