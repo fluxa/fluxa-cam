@@ -28,6 +28,9 @@ exports.capture = function(callback) {
     var onRead = function(err, timestamp, filename) {
       console.log('err => %s | t => %s | f => %s',err,timestamp,filename);
       cam.removeListener('read', onRead);
+      if(!err) {
+        callback(null, filename, timestamp);
+      }
     }
     cam.on('read', onRead);
     cam.start();
