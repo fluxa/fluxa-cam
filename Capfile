@@ -3,7 +3,7 @@ ssh_options[:forward_agent] = true
 default_run_options[:pty] = true
 # ssh_options[:auth_methods] = ["publickey"]
 # ssh_options[:keys] = ["fluxaio.pem"]
-set :application, "fluxa.io"
+set :application, "fluxa-cam"
 set :repository,  "git@github.com:fluxa/fluxa-cam.git"
 set :user, "pi"
 set :scm, :git
